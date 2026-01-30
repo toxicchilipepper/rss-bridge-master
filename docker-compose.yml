@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  rss-bridge:
+    image: rssbridge/rss-bridge:latest
+    container_name: rss-bridge
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    volumes:
+      - ./config:/config
+    environment:
+      - TZ=CET
